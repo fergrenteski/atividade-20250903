@@ -7,12 +7,10 @@ def cifra_de_cesar(texto, deslocamento):
         # Se for letra minúscula (a-z)
         elif char.islower():
             resultado += chr((ord(char) - ord('a') + deslocamento) % 26 + ord('a'))
-        # Se não for letra, mantém igual
-        else:
-            resultado += char
-
-   
     
-
+    # Se isso  não for letra,fica igual 
+        else:
+      
+            resultado += char
     return resultado
 
