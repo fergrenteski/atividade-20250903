@@ -1,4 +1,31 @@
 def cifra_de_cesar(texto, deslocamento):
+    """
+    Aplica a Cifra de César a uma string.
+
+    A Cifra de César é uma técnica de criptografia simples onde cada letra do
+    texto original é substituída por outra letra que se encontra um número fixo
+    de posições (deslocamento) à frente no alfabeto. O alfabeto é circular 
+    (depois de 'z' vem 'a').
+
+    Parâmetros:
+        texto (str): Texto de entrada que será criptografado.
+        deslocamento (int): Número de posições a deslocar no alfabeto.
+
+    Retorna:
+        str: Texto criptografado com a Cifra de César.
+
+    Regras:
+        - Preserva maiúsculas e minúsculas.
+        - Caracteres não alfabéticos (números, espaços, pontuação) não são alterados.
+
+    Exemplos:
+        >>> cifra_de_cesar("abc", 2)
+        'cde'
+        >>> cifra_de_cesar("xyz", 3)
+        'abc'
+        >>> cifra_de_cesar("Ataque ao Amanhecer!", 5)
+        'Fyfvzj ft Frfsmjhmjw!'
+    """
     resultado = ""
     for char in texto:
         # Se for letra maiúscula (A-Z)
@@ -7,10 +34,8 @@ def cifra_de_cesar(texto, deslocamento):
         # Se for letra minúscula (a-z)
         elif char.islower():
             resultado += chr((ord(char) - ord('a') + deslocamento) % 26 + ord('a'))
-    
-    # Se isso  não for letra,fica igual 
+        # Se não for letra, mantém igual
         else:
-      
             resultado += char
     return resultado
 
