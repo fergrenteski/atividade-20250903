@@ -16,4 +16,4 @@ def encontrar_maior_palavra(frase):
     # Encontra a maior palavra
     maior_palavra = max(palavras, key=len)
 
-    return palavras
+    return maior_palavra
