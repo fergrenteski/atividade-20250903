@@ -10,7 +10,9 @@ def cifra_de_cesar(texto, deslocamento):
         # Se não for letra, mantém igual
         else:
             resultado += char
+
+   
     
-    
+
     return resultado
 
