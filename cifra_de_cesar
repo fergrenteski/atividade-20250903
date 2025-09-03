@@ -1,0 +1,13 @@
+def cifra_de_cesar(texto, deslocamento):
+    resultado = ""
+    for char in texto:
+        # Se for letra maiúscula (A-Z)
+        if char.isupper():
+            resultado += chr((ord(char) - ord('A') + deslocamento) % 26 + ord('A'))
+        # Se for letra minúscula (a-z)
+        elif char.islower():
+            resultado += chr((ord(char) - ord('a') + deslocamento) % 26 + ord('a'))
+        # Se não for letra, mantém igual
+        else:
+            resultado += char
+    return resultado
